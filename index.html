@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="leather chair.css">
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+    <style>
+      .social-media-icons {
+        position: fixed;
+        bottom: 20px;
+        center: 20px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-media-icons img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+<body>
+  <div id="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <div id="card" style="display:none;">
+    <model-viewer 
+      src="https://cdn.glitch.me/155d3ebf-f05b-4a40-a962-76c8b37d4b8c/LOUNGE%20CHAIR%202.glb?v=1727011626537"
+      ios-src="https://cdn.glitch.global/155d3ebf-f05b-4a40-a962-76c8b37d4b8c/LOUNGE%20CHAIRV%20%202.usdc?v=1727012068475"
+      poster="https://cdn.glitch.global/75a70984-3835-4273-8eac-d9cdf0776a9c/99d049a8f9334c34a1de10e98ed6c541%20(1).jpg?v=1724849476898"
+      alt="Black leather chair"
+      shadow-intensity="1"
+      camera-controls
+      auto-rotate 
+      ar
+          >
+    </model-viewer>
+  </div>
+
+  <!-- Scripts to load the model viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <!-- JavaScript to handle the loading animation and display the model -->
+  <script>
+    window.addEventListener('load', function() {
+      const loaderContainer = document.getElementById('loader-container');
+      const modelViewer = document.getElementById('card');
+      
+      // Hide loader after some time and show model viewer
+      setTimeout(() => {
+        loaderContainer.style.display = 'none';
+        modelViewer.style.display = 'block';
+      }, 3000); // Adjust the timeout as needed
+    });
+  </script>
+</body>
+</html>
